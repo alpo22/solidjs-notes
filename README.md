@@ -10,6 +10,7 @@ Here’s a the commonly used commands and syntax in **React** vs **SolidJS**:
 | **Effect**                | `useEffect(() => { ... }, [deps])`       | `createEffect(() => { ... })`                           |
 |   onMount                 | `useEffect(() => { ... }, [])`           | `onMount()`                                             |
 |   onCleanup               | `useEffect(() => { ... return () => {...} }, [])`  | `onCleanup()`                                 |
+|   createRenderEffect      | Runs after the browser paints            | Runs synchronously after DOM is created, and before the browser paints. |
 | **Memoized value**        | `useMemo(() => {...}, [deps])`           | `createMemo(() => {...})`                               |
 | **Refs**                  | `const ref = useRef(null)`               | `let ref;` (direct DOM refs via `ref={el => ref = el}`) |
 | **Conditional rendering** | `{condition ? <A /> : <B />}`            | `<Show when={condition} fallback={<B />}><A /></Show>`  |
@@ -19,4 +20,3 @@ Here’s a the commonly used commands and syntax in **React** vs **SolidJS**:
 | **Fragment**              | `<> ... </>`                             | `<> ... </>`                                            |
 | **Routing**               | `react-router-dom`                       | `solid-app-router` or `@solidjs/router`                 |
 | **Dev tools**             | React DevTools                           | SolidJS DevTools                                        |
-

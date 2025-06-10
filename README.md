@@ -13,7 +13,12 @@ Here’s a the commonly used commands and syntax in **React** vs **SolidJS**:
 | **Memoized value**        | `useMemo(() => {...}, [deps])`           | `createMemo(() => {...})`                               |
 | **Refs**                  | `const ref = useRef(null)`               | `let ref;` (direct DOM refs via `ref={el => ref = el}`) |
 | **Conditional rendering** | `{condition ? <A /> : <B />}`            | `<Show when={condition} fallback={<B />}><A /></Show>`  |
-|                           | `if () return <A />`                     | `<Switch><Match when={...}>...</Match><Match when={...}>...` |
+|                           | `if () return <A />`                     | ```
+<Switch>
+    <Match when={...}>...</Match>
+    <Match when={...}>...</Match>
+</Switch>
+``` |
 | **List rendering**        | `{items.map(item => <div>{item}</div>)}` | `<For each={items}>{item => <div>{item}</div>}</For>`   |
 | **Context API**           | `createContext/useContext`               | `createContext/useContext`                              |
 | **Fragment**              | `<> ... </>`                             | `<> ... </>`                                            |

@@ -5,8 +5,10 @@ Here’s a the commonly used commands and syntax in **React** vs **SolidJS**:
 | **Concept**               | **React**                                | **SolidJS**                                             |
 | ------------------------- | ---------------------------------------- | ------------------------------------------------------- |
 | **State**                 | `const [count, setCount] = useState(0)`  | `const [count, setCount] = createSignal(0)`             |
-| **Update state**          | `setCount(count + 1)`                    | `setCount(count() + 1)` or `setCount(c => c+1)`         |
 | **Access state**          | `count`                                  | `count()`                                               |
+| **Complex state**         | `const [order, setOrder] = useState({...})` | `const [order, setOrder] = createStore({...})`       |
+|                           | `setOrder(o => {...o, name: 'newData' })`| `setOrder("name", "newData")`                           |
+| **Update state**          | `setCount(count + 1)`                    | `setCount(count() + 1)` or `setCount(c => c+1)`         |
 | **Effect**                | `useEffect(() => { ... }, [deps])`       | `createEffect(() => { ... })`                           |
 |   onMount                 | `useEffect(() => { ... }, [])`           | `onMount()`                                             |
 |   onCleanup               | `useEffect(() => { ... return () => {...} }, [])`  | `onCleanup()`                                 |
